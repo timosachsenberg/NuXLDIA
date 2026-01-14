@@ -1,0 +1,28 @@
+time="10:15:34" level=info msg="Executing Filter  v5.1.1"
+time="10:15:34" level=info msg="Processing peptide identification files"
+time="10:15:34" level=info msg="Parsing D:\\ECOLI_2025\\Ecoli_UVXL_DDA_singleshots_2026\\library_shots\\HeLa_fragout\\interact-HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9742.pep.xml"
+time="10:15:34" level=info msg="Parsing D:\\ECOLI_2025\\Ecoli_UVXL_DDA_singleshots_2026\\library_shots\\HeLa_fragout\\interact-HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9729.pep.xml"
+time="10:15:34" level=info msg="Parsing D:\\ECOLI_2025\\Ecoli_UVXL_DDA_singleshots_2026\\library_shots\\HeLa_fragout\\interact-HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9730.pep.xml"
+time="10:15:37" level=info msg="1+ Charge profile" decoy=0 target=0
+time="10:15:37" level=info msg="2+ Charge profile" decoy=1074 target=144975
+time="10:15:37" level=info msg="3+ Charge profile" decoy=272 target=56500
+time="10:15:37" level=info msg="4+ Charge profile" decoy=28 target=4154
+time="10:15:37" level=info msg="5+ Charge profile" decoy=2 target=137
+time="10:15:37" level=info msg="6+ Charge profile" decoy=4 target=5
+time="10:15:37" level=info msg="Database search results" ions=53134 peptides=43535 psms=207151
+time="10:15:37" level=info msg="Converged to 0.67 % FDR with 205770 PSMs" decoy=1380 threshold=0.500017 total=207150
+time="10:15:37" level=info msg="Converged to 1.00 % FDR with 41786 Peptides" decoy=417 threshold=0.797503 total=42203
+time="10:15:37" level=info msg="Converged to 1.00 % FDR with 51462 Ions" decoy=514 threshold=0.736878 total=51976
+time="10:15:37" level=info msg="Protein inference results" decoy=992 target=6193
+time="10:15:37" level=info msg="Converged to 0.99 % FDR with 4928 Proteins" decoy=49 threshold=0.9792 total=4977
+time="10:15:38" level=info msg="Applying sequential FDR estimation" ions=51386 peptides=41799 psms=204897
+time="10:15:38" level=info msg="Converged to 0.06 % FDR with 204783 PSMs" decoy=113 threshold=0.500186 total=204896
+time="10:15:38" level=info msg="Converged to 0.13 % FDR with 41743 Peptides" decoy=55 threshold=0.503057 total=41798
+time="10:15:38" level=info msg="Converged to 0.11 % FDR with 51330 Ions" decoy=55 threshold=0.503057 total=51385
+time="10:15:38" level=info msg="Post processing identifications"
+time="10:15:39" level=info msg="Assigning protein identifications to layers"
+time="10:15:52" level=info msg="Processing protein inference"
+time="10:15:52" level=info msg="Synchronizing PSMs and proteins"
+time="10:15:53" level=info msg="Final report numbers after FDR filtering, and post-processing" ions=51330 peptides=41743 proteins=4928 psms=204783
+time="10:15:53" level=info msg=Saving
+time="10:15:53" level=info msg=Done

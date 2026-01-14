@@ -1,0 +1,3 @@
+D:\ECOLI_2025\Ecoli_UVXL_DDA_singleshots_2026\library_shots\HeLaraw\HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9729_uncalibrated.mzML
+D:\ECOLI_2025\Ecoli_UVXL_DDA_singleshots_2026\library_shots\HeLaraw\HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9730_uncalibrated.mzML
+D:\ECOLI_2025\Ecoli_UVXL_DDA_singleshots_2026\library_shots\HeLaraw\HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9742_uncalibrated.mzML

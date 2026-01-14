@@ -11,11 +11,6 @@ venv/
 dist/
 build/
 
-# Data files (too large for git)
-*.tsv
-003-TextExporter-out/
-HeLa_fragout/
-
 # Windows metadata
 *:Zone.Identifier
 
@@ -34,3 +29,9 @@ HeLa_fragout/
 # Temporary files
 *.tmp
 *.bak
+
+# Large files (>100MB, GitHub limit)
+*.pepXML
+*.pep.xml
+HeLa_fragout/library.tsv
+HeLa_fragout/psm.tsv

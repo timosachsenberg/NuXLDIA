@@ -1,0 +1,3 @@
+D:\ECOLI_2025\Ecoli_UVXL_DDA_singleshots_2026\library_shots\HeLa_fragout\interact-HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9729.pep.xml
+D:\ECOLI_2025\Ecoli_UVXL_DDA_singleshots_2026\library_shots\HeLa_fragout\interact-HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9730.pep.xml
+D:\ECOLI_2025\Ecoli_UVXL_DDA_singleshots_2026\library_shots\HeLa_fragout\interact-HeLa_50_ng_iRT_060126_070126_BPS-DDA-HiSe_75min_long_5-10-36-45-62_RE8_1_9742.pep.xml
