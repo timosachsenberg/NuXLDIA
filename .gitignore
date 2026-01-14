@@ -30,8 +30,11 @@ build/
 *.tmp
 *.bak
 
-# Large files (>100MB, GitHub limit)
+# Large files (>100MB, GitHub limit) - use .gz versions instead
 *.pepXML
 *.pep.xml
 HeLa_fragout/library.tsv
 HeLa_fragout/psm.tsv
+
+# But allow compressed versions
+!*.gz
