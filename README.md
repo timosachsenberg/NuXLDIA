@@ -103,6 +103,30 @@ This Python implementation replaces three R scripts:
 | No error handling | Comprehensive logging |
 | Three separate scripts | Single module with fluent API |
 
+## Test Data
+
+The repository includes test data for validation:
+
+- `003-TextExporter-out/` - NuXL DDA search results (E. coli UV crosslinking)
+- `HeLa_fragout/` - HeLa reference data for iRT calibration (FragPipe output)
+- `UVECO_*.tsv` - R script outputs for comparison
+
+### Decompressing Large Files
+
+Some large files are stored compressed (gzip) due to GitHub's 100MB file size limit. After cloning, decompress them with:
+
+```bash
+gunzip -k HeLa_fragout/*.gz
+```
+
+This will extract:
+- `*.pepXML` - MSFragger search results
+- `*.pep.xml` - PeptideProphet results
+- `library.tsv` - FragPipe spectral library
+- `psm.tsv` - PSM-level results
+
+The `-k` flag keeps the original `.gz` files.
+
 ## Reference R Scripts
 
 The original R scripts are included for reference:
