@@ -6,7 +6,7 @@ Python tool to convert NuXL DDA search results (crosslinks and linear peptides) 
 
 - Converts NuXL TextExporter output (`.XLs.unknown` and `.peptides.unknown` files) to DIA-NN library format
 - Handles RNA-protein crosslinks with proper modification notation (`[nucleotide]`)
-- Converts CCS to ion mobility (1/K₀) using Mason-Schamp equation
+- Converts CCS to ion mobility (1/K₀) using Mason-Schamp equation (automatically skipped for instruments without IM, e.g., Astral)
 - Supports piecewise linear iRT calibration
 - Automatic handling of Oxidation + crosslink position conflicts
 - 99.9% match rate with original R implementation
@@ -41,6 +41,9 @@ python nuxl2dia.py -i data/*.unknown -o library.tsv --irt piecewise --irt-ref he
 
 # With linear iRT calibration
 python nuxl2dia.py -i data/*.unknown -o library.tsv --irt linear --irt-ref hela_reference.tsv
+
+# Astral data (no ion mobility) — works the same, CCS conversion is skipped automatically
+python nuxl2dia.py -i astral_data/*_XLs.unknown astral_data/*_peptides.unknown -o library.tsv
 ```
 
 ### As Python Library
@@ -72,7 +75,7 @@ The converter produces a 15-column TSV file compatible with DIA-NN:
 | ModifiedPeptideSequence | Sequence with modifications in `[nucleotide]` and `(UniMod:XX)` format |
 | PrecursorCharge | Precursor charge state |
 | AverageExperimentalRetentionTime | Retention time in seconds |
-| PrecursorIonMobility | Ion mobility (1/K₀) in Vs/cm² |
+| PrecursorIonMobility | Ion mobility (1/K₀) in Vs/cm² (empty for Astral data) |
 | PeptideSequence | Stripped sequence (no modifications) |
 | PrecursorMz | Precursor m/z |
 | ProteinId | Protein accession(s) |
@@ -87,10 +90,11 @@ The converter produces a 15-column TSV file compatible with DIA-NN:
 
 ## Comparison with R Implementation
 
-This Python implementation replaces three R scripts:
-- `UVECO_XL_lib_shot130925.R` - Crosslink processing
-- `UVECO_PE_lib_shot130925.R` - Linear peptide processing
+This Python implementation replaces the following R scripts:
+- `UVECO_XL_lib_shot130925.R` - Crosslink processing (timsTOF/E. coli)
+- `UVECO_PE_lib_shot130925.R` - Linear peptide processing (timsTOF/E. coli)
 - `UV_iRT_lm.R` - iRT calibration
+- `Astral_4su_lib_0126.R` - Combined XL + peptide processing (Astral/human, no ion mobility)
 
 ### Key Improvements
 
@@ -107,7 +111,7 @@ This Python implementation replaces three R scripts:
 
 The repository includes test data for validation:
 
-- `003-TextExporter-out/` - NuXL DDA search results (E. coli UV crosslinking)
+- `003-TextExporter-out/` - NuXL DDA search results (E. coli UV crosslinking + Astral 4SU human data)
 - `HeLa_fragout/` - HeLa reference data for iRT calibration (FragPipe output)
 - `UVECO_*.tsv` - R script outputs for comparison
 
@@ -133,6 +137,7 @@ The original R scripts are included for reference:
 - `UVECO_XL_lib_shot130925.R`
 - `UVECO_PE_lib_shot130925.R`
 - `UV_iRT_lm.R`
+- `Astral_4su_lib_0126.R`
 
 ## DIA-NN Modification Declaration
 
