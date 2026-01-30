@@ -38,3 +38,4 @@ HeLa_fragout/psm.tsv
 
 # But allow compressed versions
 !*.gz
+reference_R_scripts/splib2026.zip

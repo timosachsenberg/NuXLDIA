@@ -114,7 +114,7 @@ The repository includes test data for validation:
 - `003-TextExporter-out/timstof/` - NuXL DDA search results (E. coli UV crosslinking, timsTOF)
 - `003-TextExporter-out/astral/` - NuXL DDA search results (human 4SU crosslinking, Astral, no ion mobility)
 - `HeLa_fragout/` - HeLa reference data for iRT calibration (FragPipe output)
-- `UVECO_*.tsv` - R script outputs for comparison
+- `reference_R_scripts/UVECO_*.tsv` - R script outputs for comparison
 
 ### Decompressing Large Files
 
@@ -134,11 +134,11 @@ The `-k` flag keeps the original `.gz` files.
 
 ## Reference R Scripts
 
-The original R scripts are included for reference:
-- `UVECO_XL_lib_shot130925.R`
-- `UVECO_PE_lib_shot130925.R`
-- `UV_iRT_lm.R`
-- `Astral_4su_lib_0126.R`
+The original R scripts and their outputs are in `reference_R_scripts/`:
+- `UVECO_XL_lib_shot130925.R` - Crosslink processing (timsTOF)
+- `UVECO_PE_lib_shot130925.R` - Linear peptide processing (timsTOF)
+- `UV_iRT_lm.R` - iRT calibration
+- `Astral_4su_lib_0126.R` - Combined XL + peptide processing (Astral)
 
 ## DIA-NN Modification Declaration
 
