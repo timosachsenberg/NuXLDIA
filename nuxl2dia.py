@@ -35,6 +35,7 @@ Validation: 99.9% match rate with original R implementation. Key improvements:
 - R's manual corrections (lines 175-178) are eliminated by using the position column
 - Fixes R bugs with Oxidation+XL offset calculations that produced incorrect positions
 - Mixed decoy/target accessions are correctly kept as targets
+- Supports data without ion mobility (e.g., Astral instruments) by skipping CCS conversion
 """
 
 from __future__ import annotations
@@ -412,6 +413,8 @@ class NuXLLibraryConverter:
         Convert CCS values to reduced ion mobility (1/K0).
 
         Uses Mason-Schamp equation for timsTOF instruments.
+        Skips conversion if the CCS column is not present in the data
+        (e.g., Astral instrument data without ion mobility).
 
         Returns:
             self for method chaining
@@ -420,9 +423,15 @@ class NuXLLibraryConverter:
         charge_col = NUXL_COLUMNS['charge']
         mz_col = NUXL_COLUMNS['mz']
 
+        has_ccs = False
         for df_attr in ['_xl_df', '_pep_df']:
             df = getattr(self, df_attr)
             if df is not None and len(df) > 0:
+                if ccs_col not in df.columns:
+                    df['_ion_mobility'] = np.nan
+                    setattr(self, df_attr, df)
+                    continue
+                has_ccs = True
                 df['_ion_mobility'] = df.apply(
                     lambda row: self._ccs_to_im(
                         row[ccs_col],
@@ -433,7 +442,10 @@ class NuXLLibraryConverter:
                 )
                 setattr(self, df_attr, df)
 
-        self.logger.info("Converted CCS to ion mobility")
+        if has_ccs:
+            self.logger.info("Converted CCS to ion mobility")
+        else:
+            self.logger.info("No CCS column found, skipping ion mobility conversion")
         return self
 
     def _ccs_to_im(self, ccs: float, charge: int, mz: float) -> float:
