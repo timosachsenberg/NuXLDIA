@@ -43,7 +43,7 @@ python nuxl2dia.py -i data/*.unknown -o library.tsv --irt piecewise --irt-ref he
 python nuxl2dia.py -i data/*.unknown -o library.tsv --irt linear --irt-ref hela_reference.tsv
 
 # Astral data (no ion mobility) — works the same, CCS conversion is skipped automatically
-python nuxl2dia.py -i astral_data/*_XLs.unknown astral_data/*_peptides.unknown -o library.tsv
+python nuxl2dia.py -i 003-TextExporter-out/astral/*.unknown -o library.tsv
 ```
 
 ### As Python Library
@@ -111,7 +111,8 @@ This Python implementation replaces the following R scripts:
 
 The repository includes test data for validation:
 
-- `003-TextExporter-out/` - NuXL DDA search results (E. coli UV crosslinking + Astral 4SU human data)
+- `003-TextExporter-out/timstof/` - NuXL DDA search results (E. coli UV crosslinking, timsTOF)
+- `003-TextExporter-out/astral/` - NuXL DDA search results (human 4SU crosslinking, Astral, no ion mobility)
 - `HeLa_fragout/` - HeLa reference data for iRT calibration (FragPipe output)
 - `UVECO_*.tsv` - R script outputs for comparison
 
