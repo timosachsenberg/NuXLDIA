@@ -142,7 +142,7 @@ The original R scripts and their outputs are in `reference_R_scripts/`:
 
 ## DIA-NN Modification Declaration
 
-For DIA-NN to recognize the nucleotide modifications, add the contents of `declare_mod_UV_UCGA_ext.txt` to your DIA-NN modification settings.
+For DIA-NN to recognize the nucleotide modifications, add the contents of `DIA-NN/declare_mod_UV_UCGA_ext.txt` to your DIA-NN modification settings.
 
 ## License
 

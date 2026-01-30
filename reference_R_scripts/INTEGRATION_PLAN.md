@@ -20,7 +20,7 @@ NuXL TextExporter Output
                              │
                              ▼
               Final Library with iRT (UVECO_SHOT_LIB_iRT_130126.tsv)
-              + declare_mod_UV_UCGA_ext.txt (DIA-NN mod definitions)
+              + DIA-NN/declare_mod_UV_UCGA_ext.txt (DIA-NN mod definitions)
 ```
 
 ---
@@ -122,7 +122,7 @@ Same as Script 1 but simpler:
 ### Required Files
 1. **template_lib.tsv** - Template for library format (not in repo, needs to be provided or created)
 2. **HeLa FragPipe output** - `psm.tsv` and `library.tsv` for iRT calibration
-3. **declare_mod_UV_UCGA_ext.txt** - DIA-NN modification declarations (provided)
+3. **DIA-NN/declare_mod_UV_UCGA_ext.txt** - DIA-NN modification declarations (provided)
 
 ### R Packages
 ```r
